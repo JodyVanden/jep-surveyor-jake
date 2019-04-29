@@ -4,7 +4,6 @@ module Types
       argument :title, String, required: true
     end
 
-
     field :delete_rating_question, RatingQuestionType, null: true do
       argument :id, ID, required: true
     end
@@ -12,6 +11,10 @@ module Types
     field :update_rating_question, RatingQuestionType, null: false do
       argument :id, ID, required: true
       argument :title, String, required: true
+    end
+
+    field :create_survey, SurveyType, null: false do
+      argument :name, String, required: true
     end
 
     def create_rating_question(title:)
@@ -29,6 +32,10 @@ module Types
       target_question.title = title
       target_question.save
       {id: id, title: title}
+    end
+
+    def create_survey(name:)
+      Survey.create!(name: name)
     end
   end
 end
