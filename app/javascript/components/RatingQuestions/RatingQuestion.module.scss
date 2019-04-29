@@ -1,0 +1,113 @@
+* {
+  font-family: "Arial Narrow";
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+.questionContainer {
+  display: flex;
+  margin: 20px;
+  height: 200px;
+}
+
+.questionColumn {
+  background: #517ec6;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.answersColumn {
+  width: 500px;
+  border: 10px solid #517ec6;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  align-items: center;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.changeTitleContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.changeTitleInput {
+  height: 30px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.updateButton {
+  height: 30px;
+  font-size: 15px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: 1px solid #517ec6;
+}
+.updateButton:hover {
+  background: #517ec6;
+  color: white;
+  border: 1px solid white;
+}
+
+.deleteButton {
+  width: 95%;
+  margin: 10px;
+  height: 30px;
+  font-size: 15px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: 1px solid #517ec6;
+}
+.deleteButton:hover {
+  background: #517ec6;
+  color: white;
+  border: 1px solid white;
+}
+
+.questionTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s;
+}
+
+.questionTitle:hover {
+  border-bottom: 1px solid white;
+}
+
+.selectionIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 30px;
+  width: 50%;
+}
+
+.optionsContainer {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  border-right: 1px solid #517ec6;
+}

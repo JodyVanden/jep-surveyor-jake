@@ -1,0 +1,4 @@
+<div class="flash-notice"><%= flash[:notice] %></div>
+<em><p>RATING QUESTIONS INDEX</p></em>
+
+<%= react_component "RatingQuestions", { ratingQuestionProps: rating_question_props, ratingQuestionsUrl: rating_questions_url(format: :json), firstFiveRatingQuestions: @rating_questions.limit(5) } %>

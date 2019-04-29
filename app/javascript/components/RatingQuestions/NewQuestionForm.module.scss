@@ -1,0 +1,28 @@
+.formContainer {
+  width: 500px;
+  border: 5px solid #517ec6;
+  margin-top: 50px;
+}
+
+.formInput {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  border: 0px;
+}
+
+.formButton {
+  width: 100%;
+  height: 30px;
+  background: white;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  transition: all 0.5s;
+}
+.formButton:hover {
+  background: #517ec6;
+  color: white;
+}
