@@ -17141,3 +17141,27 @@ MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.003s
 Completed 200 OK in 10ms (Views: 0.6ms)
 
 
+Started GET "/graphiql" for 127.0.0.1 at 2019-04-30 09:41:58 +1000
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (9.3ms)
+Completed 200 OK in 32ms (Views: 25.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-04-30 09:41:59 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 46ms (Views: 7.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-04-30 09:42:02 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n  ratingQuestions{\n    id\n    title\n    survey{\n      name\n    }\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"{\n  ratingQuestions{\n    id\n    title\n    survey{\n      name\n    }\n  }\n}", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"surveys", "filter"=>{"_id"=>BSON::ObjectId('5cc6b8bf2355da20befa2e2a')}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 6ms (Views: 0.5ms)
+
+
