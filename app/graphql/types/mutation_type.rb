@@ -15,7 +15,7 @@ module Types
     end
 
     def create_rating_question(title:)
-      RatingQuestion.create(title: title)
+      RatingQuestion.create!(title: title)
     end
 
     def delete_rating_question(id:)
