@@ -1,14 +1,14 @@
 module Types
-  class CreateRatingQuestionResult < BaseUnion
-    possible_types RatingQuestionType, FailedCreateRatingQuestionResult, MissingArgumentError
+  class CreateSurveyResult < BaseUnion
+    possible_types SurveyType, FailedCreateSurveyResult, MissingArgumentError
     
     def self.resolve_type(object, _context)
       if object.is_a?(Mongoid::Errors::Validations)
         MissingArgumentError
       elsif object.persisted?
-        RatingQuestionType
+        SurveyType
       else
-        FailedCreateRatingQuestionResult
+        FailedCreateSurveyResult
       end
     end
   end

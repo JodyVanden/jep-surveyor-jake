@@ -5,7 +5,12 @@ module Mutations
     type Types::CreateRatingQuestionResult
 
     def resolve(title: nil)
-      RatingQuestion.create!(title: title)
+      begin
+        RatingQuestion.create!(title: title)
+      rescue Mongoid::Errors::Validations => e
+        puts "RESCUING #{e.class}"
+        e
+      end
     end
   end
 end

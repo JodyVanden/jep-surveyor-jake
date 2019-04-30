@@ -1,9 +1,9 @@
 module Types
-  class FailedCreateRatingQuestionResult < BaseObject
+  class MissingArgumentError < Types::BaseObject
     field :errors, String, null: false
 
     def errors
-      "IT DIDN'T WERK"
+      "Missing an argument..."
     end
   end
 end
