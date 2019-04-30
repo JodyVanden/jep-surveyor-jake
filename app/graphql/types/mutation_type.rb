@@ -3,14 +3,12 @@ module Types
 
     field :create_user, mutation: Mutations::CreateUser
     field :signin_user, mutation: Mutations::SignInUser
+    field :create_rating_question, mutation: Mutations::CreateRatingQuestion
+    field :delete_rating_question, mutation: Mutations::DeleteRatingQuestion
 
-    field :create_rating_question, CreateRatingQuestionResult, null: false do
-      argument :title, String, required: true
-    end
-
-    field :delete_rating_question, RatingQuestionType, null: true do
-      argument :id, ID, required: true
-    end
+    # field :delete_rating_question, RatingQuestionType, null: true do
+    #   argument :id, ID, required: true
+    # end
 
     field :update_rating_question, RatingQuestionType, null: false do
       argument :id, ID, required: true
@@ -21,15 +19,13 @@ module Types
       argument :name, String, required: true
     end
 
-    def create_rating_question(title:)
-      RatingQuestion.create!(title: title)
-    end
-
-    def delete_rating_question(id:)
-      target_question = RatingQuestion.find(id)
-      target_question.destroy
-      { id: id }
-    end
+    # def delete_rating_question(id:)
+    #   target_question = RatingQuestion.find(id)
+    #   if target_question
+    #     target_question.destroy
+    #   end
+    #   { id: id }
+    # end
 
     def update_rating_question(id:, title:)
       target_question = RatingQuestion.find(id)

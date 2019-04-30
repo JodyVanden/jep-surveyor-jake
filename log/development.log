@@ -23537,3 +23537,520 @@ MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
 Completed 200 OK in 161ms (Views: 0.2ms)
 
 
+Started POST "/graphql" for ::1 at 2019-04-30 14:57:13 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n", "variables"=>nil}}
+Completed 500 Internal Server Error in 18ms
+
+
+  
+SyntaxError (/Users/jake.pitman/code/jep-surveyor-graphql-jake/app/graphql/mutations/delete_rating_question.rb:13: syntax error, unexpected =>
+...id::Errors::DocumentNotFound => e
+...                             ^~):
+  
+app/graphql/mutations/delete_rating_question.rb:13: syntax error, unexpected =>
+app/graphql/types/mutation_type.rb:7:in `<class:MutationType>'
+app/graphql/types/mutation_type.rb:2:in `<module:Types>'
+app/graphql/types/mutation_type.rb:1:in `<top (required)>'
+app/graphql/surveyor_schema.rb:2:in `<class:SurveyorSchema>'
+app/graphql/surveyor_schema.rb:1:in `<top (required)>'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started GET "/graphiql" for ::1 at 2019-04-30 14:57:35 +1000
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (1958.6ms)
+Completed 200 OK in 1982ms (Views: 1975.7ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 14:57:37 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 127ms (Views: 10.1ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 14:57:45 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n", "variables"=>nil}}
+MONGODB | EVENT: #<TopologyOpening topology=Unknown[]>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<TopologyChanged prev=Unknown[] new=Unknown[localhost:27017]>
+MONGODB | Topology type 'Unknown' changed to type 'Unknown'.
+MONGODB | EVENT: #<ServerOpening address=localhost:27017 topology=Unknown[localhost:27017]>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<ServerDescriptionChanged address=localhost:27017 topology=Single[localhost:27017] prev=#<Mongo::Server:Description:0x70162376379480 config={} average_round_trip_time=> new=#<Mongo::Server:Description:0x70162287604020 config={"ismaster"=>true, "maxBsonObjectSize"=>16777216, "maxMessageSizeBytes"=>48000000, "maxWriteBatchSize"=>1000, "localTime"=>2019-04-30 04:57:45 UTC, "maxWireVersion"=>5, "minWireVersion"=>0, "readOnly"=>false, "ok"=>1.0} average_round_trip_time=0.002135>>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<TopologyChanged prev=Unknown[localhost:27017] new=Single[localhost:27017]>
+MONGODB | Topology type 'Unknown' changed to type 'Single'.
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{"_id"=>BSON::ObjectId('5c942b5dad86117ab0c7d0a2')}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
+undefined method `persisted?' for #<Mongoid::Errors::DocumentNotFound:0x00007f9fdf6eab50>
+/Users/jake.pitman/code/jep-surveyor-graphql-jake/app/graphql/types/delete_rating_question_result.rb:9:in `resolve_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:507:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:507:in `check_resolved_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:477:in `resolve_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/query.rb:112:in `block (2 levels) in initialize'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/query.rb:269:in `resolve_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/member/instrumentation.rb:102:in `block in proxy_to_depth'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:1132:in `after_lazy'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/member/instrumentation.rb:95:in `proxy_to_depth'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/member/instrumentation.rb:85:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/field.rb:248:in `resolve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:318:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/middleware_chain.rb:49:in `invoke_core'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/middleware_chain.rb:38:in `invoke'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:129:in `block in resolve_field'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:128:in `resolve_field'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:92:in `block in resolve_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:85:in `each'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:85:in `resolve_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:56:in `block in resolve_root_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:49:in `resolve_root_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:31:in `begin_query'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:112:in `begin_query'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:84:in `block in run_as_multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:83:in `map'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:83:in `run_as_multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:62:in `block (2 levels) in run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:182:in `block in instrument_and_analyze'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:29:in `block (2 levels) in apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:46:in `block (2 levels) in each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:41:in `each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:45:in `block in each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:44:in `each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:27:in `block in apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:26:in `apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:174:in `instrument_and_analyze'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:61:in `block in run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:59:in `run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:49:in `run_all'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:376:in `block in multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:1205:in `with_definition_error_check'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:375:in `multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:352:in `execute'
+/Users/jake.pitman/code/jep-surveyor-graphql-jake/app/controllers/graphql_controller.rb:10:in `execute'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:194:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/react-rails-2.5.0/lib/react/rails/controller_lifecycle.rb:31:in `use_react_component_helper'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rescue.rb:22:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:134:in `process'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:32:in `process'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:191:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:252:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:34:in `serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `each'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:840:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/tempfile_reaper.rb:15:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:232:in `context'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:226:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:98:in `run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:30:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/webpacker-4.0.2/lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-proxy-0.6.5/lib/rack/proxy.rb:57:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Completed 500 Internal Server Error in 61ms (Views: 1.3ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 14:57:56 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    # ...on FailedCreateRatingQuestionResult{\n    #   errors\n    # }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    # ...on FailedCreateRatingQuestionResult{\n    #   errors\n    # }\n  }\n}\n", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{"_id"=>BSON::ObjectId('5c942b5dad86117ab0c7d0a2')}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
+undefined method `persisted?' for #<Mongoid::Errors::DocumentNotFound:0x00007f9fe5cdd778>
+/Users/jake.pitman/code/jep-surveyor-graphql-jake/app/graphql/types/delete_rating_question_result.rb:9:in `resolve_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:507:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:507:in `check_resolved_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:477:in `resolve_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/query.rb:112:in `block (2 levels) in initialize'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/query.rb:269:in `resolve_type'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/member/instrumentation.rb:102:in `block in proxy_to_depth'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:1132:in `after_lazy'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/member/instrumentation.rb:95:in `proxy_to_depth'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/member/instrumentation.rb:85:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/field.rb:248:in `resolve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:318:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/middleware_chain.rb:49:in `invoke_core'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/middleware_chain.rb:38:in `invoke'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:129:in `block in resolve_field'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:128:in `resolve_field'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:92:in `block in resolve_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:85:in `each'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:85:in `resolve_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:56:in `block in resolve_root_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:49:in `resolve_root_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:31:in `begin_query'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:112:in `begin_query'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:84:in `block in run_as_multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:83:in `map'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:83:in `run_as_multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:62:in `block (2 levels) in run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:182:in `block in instrument_and_analyze'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:29:in `block (2 levels) in apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:46:in `block (2 levels) in each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:41:in `each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:45:in `block in each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:44:in `each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:27:in `block in apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:26:in `apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:174:in `instrument_and_analyze'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:61:in `block in run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:59:in `run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:49:in `run_all'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:376:in `block in multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:1205:in `with_definition_error_check'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:375:in `multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:352:in `execute'
+/Users/jake.pitman/code/jep-surveyor-graphql-jake/app/controllers/graphql_controller.rb:10:in `execute'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:194:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/react-rails-2.5.0/lib/react/rails/controller_lifecycle.rb:31:in `use_react_component_helper'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rescue.rb:22:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:134:in `process'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:32:in `process'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:191:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:252:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:34:in `serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `each'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:840:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/tempfile_reaper.rb:15:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:232:in `context'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:226:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:98:in `run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:30:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/webpacker-4.0.2/lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-proxy-0.6.5/lib/rack/proxy.rb:57:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Completed 500 Internal Server Error in 62ms (Views: 1.5ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:01:21 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{"_id"=>BSON::ObjectId('5c942b5dad86117ab0c7d0a2')}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.001s
+The value from "deleteRatingQuestion" on "Mutation" could not be resolved to "DeleteRatingQuestionResult!". (Received: `DocumentNotFoundError`, Expected: [Id, FailedCreateRatingQuestionResult]) Make sure you have defined a `resolve_type` proc on your schema and that value `#<Types::DocumentNotFoundError:0x00007f9fdce322f8 @object=#<Mongoid::Errors::DocumentNotFound: 
+message:
+  Document(s) not found for class RatingQuestion with id(s) 5c942b5dad86117ab0c7d0a2.
+summary:
+  When calling RatingQuestion.find with an id or array of ids, each parameter must match a document in the database or this error will be raised. The search was for the id(s): 5c942b5dad86117ab0c7d0a2 ... (1 total) and the following ids were not found: 5c942b5dad86117ab0c7d0a2.
+resolution:
+  Search for an id that is in the database or set the Mongoid.raise_not_found_error configuration option to false, which will cause a nil to be returned instead of raising this error when searching for a single id, or only the matched documents when searching for multiples.>, @context=#<Query::Context ...>>` gets resolved to a valid type. You may need to add your type to `orphan_types` if it implements an interface but isn't a return type of any other field.
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema/default_type_error.rb:10:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:993:in `type_error'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:572:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:572:in `type_error'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:295:in `block in resolve_value'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:1132:in `after_lazy'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:289:in `resolve_value'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:275:in `resolve_value'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:210:in `continue_resolve_field'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:181:in `continue_or_wait'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:154:in `resolve_field'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:92:in `block in resolve_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:85:in `each'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:85:in `resolve_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:56:in `block in resolve_root_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:49:in `resolve_root_selection'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/execute.rb:31:in `begin_query'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:112:in `begin_query'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:84:in `block in run_as_multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:83:in `map'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:83:in `run_as_multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:62:in `block (2 levels) in run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:182:in `block in instrument_and_analyze'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:29:in `block (2 levels) in apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:46:in `block (2 levels) in each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:41:in `each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:45:in `block in each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:44:in `each_query_call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:27:in `block in apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/instrumentation.rb:26:in `apply_instrumenters'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:174:in `instrument_and_analyze'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:61:in `block in run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `block in trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:76:in `call_tracers'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/tracing.rb:62:in `trace'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:59:in `run_queries'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/execution/multiplex.rb:49:in `run_all'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:376:in `block in multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:1205:in `with_definition_error_check'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:375:in `multiplex'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphql-1.9.4/lib/graphql/schema.rb:352:in `execute'
+/Users/jake.pitman/code/jep-surveyor-graphql-jake/app/controllers/graphql_controller.rb:10:in `execute'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:194:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/react-rails-2.5.0/lib/react/rails/controller_lifecycle.rb:31:in `use_react_component_helper'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/rescue.rb:22:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:134:in `process'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:32:in `process'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:191:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:252:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:34:in `serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `each'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `serve'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:840:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/tempfile_reaper.rb:15:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:38:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:232:in `context'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:226:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:98:in `run_callbacks'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135:in `call_app'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:30:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `catch'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:20:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/webpacker-4.0.2/lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/rack-proxy-0.6.5/lib/rack/proxy.rb:57:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+/Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Completed 500 Internal Server Error in 59ms (Views: 1.8ms)
+
+
+Started GET "/graphiql" for ::1 at 2019-04-30 15:01:54 +1000
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (13.4ms)
+Completed 200 OK in 37ms (Views: 30.8ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:01:54 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 117ms (Views: 13.7ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:02:10 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    # ...on FailedCreateRatingQuestionResult{\n    #   errors\n    # }\n    ...on DocumentNotFoundError{\n      errors\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    # ...on FailedCreateRatingQuestionResult{\n    #   errors\n    # }\n    ...on DocumentNotFoundError{\n      errors\n    }\n  }\n}\n", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{"_id"=>BSON::ObjectId('5c942b5dad86117ab0c7d0a2')}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 24ms (Views: 0.2ms)
+
+
+Started GET "/graphiql" for ::1 at 2019-04-30 15:03:44 +1000
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (8.9ms)
+Completed 200 OK in 31ms (Views: 24.6ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:03:44 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 84ms (Views: 8.4ms)
+
+
+Started GET "/graphiql" for ::1 at 2019-04-30 15:07:48 +1000
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/jake.pitman/.asdf/installs/ruby/2.5.3/lib/ruby/gems/2.5.0/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (12.2ms)
+Completed 200 OK in 38ms (Views: 31.9ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:07:49 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 103ms (Views: 11.6ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:08:05 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on ObjectPersistedError{\n      errors\n    }\n    ...on DocumentNotFoundError{\n      errors\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942b5dad86117ab0c7d0a2\") {\n    ...on Id{\n      id\n    }\n    ...on ObjectPersistedError{\n      errors\n    }\n    ...on DocumentNotFoundError{\n      errors\n    }\n  }\n}\n", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{"_id"=>BSON::ObjectId('5c942b5dad86117ab0c7d0a2')}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 11ms (Views: 0.2ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:18:10 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942affad86117ab0c7d0a1\") {\n    ...on Id{\n      id\n    }\n    ...on ObjectPersistedError{\n      errors\n    }\n    ...on DocumentNotFoundError{\n      errors\n    }\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  deleteRatingQuestion(id: \"5c942affad86117ab0c7d0a1\") {\n    ...on Id{\n      id\n    }\n    ...on ObjectPersistedError{\n      errors\n    }\n    ...on DocumentNotFoundError{\n      errors\n    }\n  }\n}\n", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{"_id"=>BSON::ObjectId('5c942affad86117ab0c7d0a1')}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | surveyor_development.delete | STARTED | {"delete"=>"rating_questions", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('5c942affad86117ab0c7d0a1')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | surveyor_development.delete | SUCCEEDED | 0.002s
+Completed 200 OK in 95ms (Views: 2.6ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:20:45 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"# mutation{\n#   signinUser(\n#     email:{\n#       email:\"jake@example.com\",\n#       password:\"123456\"sdo\n#     }\n#   ){\n#     token\n#     user {\n#       id\n#     }\n#   }\n# }\n\nmutation{\n  createRatingQuestion(\n    title:\"GIVEME\"\n  ){\n    ...on RatingQuestion{\n      id\n      title\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n\n# mutation {\n#   deleteRatingQuestion(id: \"5c942affad86117ab0c7d0a1\") {\n#     ...on Id{\n#       id\n#     }\n#     ...on ObjectPersistedError{\n#       errors\n#     }\n#     ...on DocumentNotFoundError{\n#       errors\n#     }\n#   }\n# }", "variables"=>nil, "graphql"=>{"query"=>"# mutation{\n#   signinUser(\n#     email:{\n#       email:\"jake@example.com\",\n#       password:\"123456\"sdo\n#     }\n#   ){\n#     token\n#     user {\n#       id\n#     }\n#   }\n# }\n\nmutation{\n  createRatingQuestion(\n    title:\"GIVEME\"\n  ){\n    ...on RatingQuestion{\n      id\n      title\n    }\n    ...on FailedCreateRatingQuestionResult{\n      errors\n    }\n  }\n}\n\n# mutation {\n#   deleteRatingQuestion(id: \"5c942affad86117ab0c7d0a1\") {\n#     ...on Id{\n#       id\n#     }\n#     ...on ObjectPersistedError{\n#       errors\n#     }\n#     ...on DocumentNotFoundError{\n#       errors\n#     }\n#   }\n# }", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.insert | STARTED | {"insert"=>"rating_questions", "documents"=>[{"_id"=>BSON::ObjectId('5cc7db2d2355da19171dcc36'), "title"=>"GIVEME"}], "ordered"=>true}
+MONGODB | localhost:27017 | surveyor_development.insert | SUCCEEDED | 0.000s
+Completed 200 OK in 52ms (Views: 0.6ms)
+
+
+Started POST "/graphql" for ::1 at 2019-04-30 15:20:55 +1000
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n  ratingQuestions{\n    title\n    id\n  }\n}\n\n", "variables"=>nil, "graphql"=>{"query"=>"{\n  ratingQuestions{\n    title\n    id\n  }\n}\n\n", "variables"=>nil}}
+MONGODB | localhost:27017 | surveyor_development.find | STARTED | {"find"=>"rating_questions", "filter"=>{}}
+MONGODB | localhost:27017 | surveyor_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 18ms (Views: 0.9ms)
+
+
