@@ -1,3 +1,4 @@
+require 'jwt'
 module Mutations
   class SignInUser < BaseMutation
     null true
@@ -17,15 +18,19 @@ module Mutations
       return unless user
       return unless user.authenticate(email[:password])
 
-      # use Ruby on Rails - ActiveSupport::MessageEncryptor, to build a token
-      puts "WEIRD CRED THINGS"
-      puts Rails.application.credentials
-      # crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
-      len   = ActiveSupport::MessageEncryptor.key_len
-      salt  = SecureRandom.random_bytes(len)
-      key = ActiveSupport::KeyGenerator.new('password').generate_key(salt, len)
-      crypt = ActiveSupport::MessageEncryptor.new(key)
-      token = crypt.encrypt_and_sign("user-id:#{ user.id }")
+      payload = {
+        email: user.email,
+        id: user.id
+      }
+
+      token = JWT.encode payload, ENV["SECRET"], 'HS256'
+
+      puts "SIGNED TOKEN"
+      puts token
+      puts "DECRYPTED TOKEN"
+      puts JWT.decode token, ENV["SECRET"], true, { algorithm: 'HS256' }
+      puts "ENV VARIABLE"
+      puts ENV["SECRET"]
 
       { user: user, token: token }
     end

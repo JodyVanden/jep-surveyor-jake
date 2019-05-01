@@ -4,8 +4,7 @@ class GraphqlController < ApplicationController
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      token: retrieve_token
     }
     result = SurveyorSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
@@ -15,6 +14,13 @@ class GraphqlController < ApplicationController
   end
 
   private
+
+  def retrieve_token
+    return nil if request.headers['Authorization'].blank?
+    token = request.headers['Authorization'].split(' ').last
+    return nil if token.blank?
+    token
+  end
 
   # Handle form data, JSON body, or a blank value
   def ensure_hash(ambiguous_param)
