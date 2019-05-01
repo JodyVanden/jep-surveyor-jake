@@ -1,4 +1,7 @@
 node_modules
-
+log/development.log
+tmp/cache/bootsnap-load-path-cache
+tmp/pids/server.pid
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/local_env.yaml

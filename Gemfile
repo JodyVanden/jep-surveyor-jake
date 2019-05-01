@@ -7,6 +7,7 @@ ruby '2.5.3'
 gem 'graphql'
 gem 'rails', '~> 5.2.2'
 gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
 gem 'mongoid'
 # Use Puma as the app server
