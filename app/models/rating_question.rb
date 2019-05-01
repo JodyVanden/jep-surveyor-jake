@@ -3,6 +3,6 @@ class RatingQuestion
 
   field :title, type: String
   belongs_to :survey, optional: true
-  # field :survey_id, type: String
   validates :title, presence: true
+  validates :survey, presence: true
 end

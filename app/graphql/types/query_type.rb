@@ -1,16 +1,23 @@
 module Types
   class QueryType < Types::BaseObject
-    field :rating_questions, [RatingQuestionType], null: false
+    field :accounts, [AccountType], null: false
     field :surveys, [SurveyType], null: false
+    field :rating_questions, [RatingQuestionType], null: false
     field :get_token_from_header, TokenType, null: false
     field :current_user, UserType, null: false
 
-    def rating_questions
-      RatingQuestion.all
+    def accounts
+      Account.all
     end
 
     def surveys
-      Survey.all
+      p "CURRENT USER!!!"
+      current_user.account.surveys
+      # Survey.all
+    end
+
+    def rating_questions
+      RatingQuestion.all
     end
 
     def get_token_from_header

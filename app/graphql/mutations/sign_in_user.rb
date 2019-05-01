@@ -16,6 +16,8 @@ module Mutations
 
       # ensures we have the correct user
       return unless user
+      p "USER::"
+      p user
       return unless user.authenticate(email[:password])
 
       payload = {
