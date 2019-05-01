@@ -32,7 +32,6 @@ module Mutations
       puts "ENV VARIABLE"
       puts ENV["SECRET"]
 
-
       { user: user, token: token }
     end
   end
