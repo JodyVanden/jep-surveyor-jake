@@ -4,6 +4,41 @@ import * as styles from "./index.module.scss";
 import RatingQuestion from "./RatingQuestion";
 import NewQuestionForm from "./NewQuestionForm";
 
+import ApolloClient from "apollo-boost";
+
+const client = new ApolloClient({
+  uri: "http://localhost:3000/graphql"
+});
+
+import { gql } from "apollo-boost";
+// or you can use `import gql from 'graphql-tag';` instead
+
+client
+  .query({
+    query: gql`
+      {
+        accounts {
+          id
+          name
+          users {
+            id
+            name
+            email
+          }
+          surveys {
+            id
+            name
+            ratingQuestions {
+              id
+              title
+            }
+          }
+        }
+      }
+    `
+  })
+  .then(result => console.log("RESULTS", result));
+
 interface Question {
   id: string;
   title: string;
@@ -24,10 +59,10 @@ class RatingQuestions extends React.Component<RatingQuestionsProps, {}> {
   //------------------------NEW QUESTION FUNCTIONS----------------------------
 
   //UPDATE UI AFTER POST REQUEST
-  updateUiAfterPost = (newQuestion) => {
-    const updatedQuestions: any = this.state.questions.concat(newQuestion)
-    this.setState({questions: updatedQuestions})
-  }
+  updateUiAfterPost = newQuestion => {
+    const updatedQuestions: any = this.state.questions.concat(newQuestion);
+    this.setState({ questions: updatedQuestions });
+  };
 
   //----------------------DELETE QUESTION FUNCTIONS----------------------------
 
