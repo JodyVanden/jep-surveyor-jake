@@ -11,9 +11,7 @@ module Types
     end
 
     def surveys
-      p "CURRENT USER!!!"
       current_user.account.surveys
-      # Survey.all
     end
 
     def rating_questions
