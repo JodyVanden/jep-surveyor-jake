@@ -1,9 +1,10 @@
 import React from "react";
-import ApolloClient from "apollo-boost";
+import ApolloClient from "apollo-client";
 import { ApolloProvider } from "react-apollo";
 import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
 import SignIn from "./SignIn";
+import { InMemoryCache } from "apollo-cache-inmemory";
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -21,8 +22,9 @@ const httpLink = createHttpLink({
   uri: "http://localhost:3000/graphql"
 });
 
-const client: any = new ApolloClient({
-  link: authLink.concat(httpLink)
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
 });
 
 import { gql } from "apollo-boost";
