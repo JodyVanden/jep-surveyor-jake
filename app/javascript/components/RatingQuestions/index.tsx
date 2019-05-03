@@ -10,35 +10,6 @@ const client = new ApolloClient({
   uri: "http://localhost:3000/graphql"
 });
 
-import { gql } from "apollo-boost";
-// or you can use `import gql from 'graphql-tag';` instead
-
-client
-  .query({
-    query: gql`
-      {
-        accounts {
-          id
-          name
-          users {
-            id
-            name
-            email
-          }
-          surveys {
-            id
-            name
-            ratingQuestions {
-              id
-              title
-            }
-          }
-        }
-      }
-    `
-  })
-  .then(result => console.log("RESULTS", result));
-
 interface Question {
   id: string;
   title: string;
