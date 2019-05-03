@@ -29,7 +29,8 @@ class SignIn extends React.Component {
   `;
 
   handleToken = data => {
-    console.log(data);
+    console.log("TOKEN::::", data.signinUser.token);
+    window.localStorage.setItem("token", data.signinUser.token);
   };
 
   render() {

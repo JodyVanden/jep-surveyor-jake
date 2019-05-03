@@ -7,33 +7,33 @@ const client = new ApolloClient({
   uri: "http://localhost:3000/graphql"
 });
 
-import { gql } from "apollo-boost";
+// import { gql } from "apollo-boost";
 
-client
-  .query({
-    query: gql`
-      {
-        accounts {
-          id
-          name
-          users {
-            id
-            name
-            email
-          }
-          surveys {
-            id
-            name
-            ratingQuestions {
-              id
-              title
-            }
-          }
-        }
-      }
-    `
-  })
-  .then(result => console.log("RESULTS", result));
+// client
+//   .query({
+//     query: gql`
+//       {
+//         accounts {
+//           id
+//           name
+//           users {
+//             id
+//             name
+//             email
+//           }
+//           surveys {
+//             id
+//             name
+//             ratingQuestions {
+//               id
+//               title
+//             }
+//           }
+//         }
+//       }
+//     `
+//   })
+//   .then(result => console.log("RESULTS", result));
 
 class Account extends React.Component {
   render() {
@@ -41,7 +41,11 @@ class Account extends React.Component {
       <ApolloProvider client={client}>
         <div>
           <h1>Hello from account/index</h1>
-          <SignIn />
+          {window.localStorage.getItem("token") ? (
+            <p>You are logged in</p>
+          ) : (
+            <SignIn />
+          )}
         </div>
       </ApolloProvider>
     );
