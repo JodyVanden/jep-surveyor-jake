@@ -2,7 +2,11 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import { gql } from "apollo-boost";
 
-class SignIn extends React.Component {
+interface SignInProps {
+  triggerRefresh: any;
+}
+
+class SignIn extends React.Component<SignInProps> {
   state = {
     email: "",
     password: ""
@@ -43,7 +47,10 @@ class SignIn extends React.Component {
         <Mutation
           mutation={this.signInMutation}
           variables={{ email: this.state.email, password: this.state.password }}
-          onCompleted={(data: any | Error) => this.handleToken(data)}
+          onCompleted={(data: any | Error) => {
+            this.handleToken(data);
+            this.props.triggerRefresh();
+          }}
         >
           {(postMutation: () => void) => (
             <button onClick={postMutation}>Submit</button>

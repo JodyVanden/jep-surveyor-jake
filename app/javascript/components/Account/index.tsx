@@ -56,14 +56,24 @@ const accountQuery = gql`
 `;
 
 class Account extends React.Component {
+  triggerRefresh = () => {
+    window.location.reload();
+  };
+
+  signOut = () => {
+    window.localStorage.removeItem("token");
+    this.triggerRefresh();
+  };
+
   render() {
     return (
       <ApolloProvider client={client}>
         <h1>Hello from account/index</h1>
+        <button onClick={this.signOut}>Sign Out</button>
         <Query query={accountQuery}>
           {({ loading, error, data }) => {
             if (loading) return <p>...loading</p>;
-            if (error) return <SignIn />;
+            if (error) return <SignIn triggerRefresh={this.triggerRefresh} />;
 
             return (
               <div>
