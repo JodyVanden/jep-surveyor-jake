@@ -61,6 +61,14 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
     });
   };
 
+  avulseString = (string, maxLength) => {
+    if (string.length > maxLength) {
+      return string.substring(0, maxLength) + "..";
+    } else {
+      return string;
+    }
+  };
+
   //----------------------------------------------------------------------
   questionValues = [
     "strongly-disagree",
@@ -91,7 +99,7 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
               }
               className={styles.questionTitle}
             >
-              "{this.state.questionTitle}"
+              "{this.avulseString(this.state.questionTitle, 70)}"
             </a>
             <div className={styles.changeTitleContainer}>
               <input
@@ -125,10 +133,7 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
               style={{
                 background: this.optionColors[this.state.selectedOption]
               }}
-            >
-              {/* {" "}
-              {this.state.selectedOption}{" "} */}
-            </h1>
+            />
           </div>
         </div>
       </div>
