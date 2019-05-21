@@ -1,5 +1,6 @@
 import React from "react";
 import RatingQuestion from "../RatingQuestions/RatingQuestion";
+import styles from "../RatingQuestions/index.module.scss";
 
 const deleteQuestion = () => {
   console.log("delete question clicked");
@@ -14,14 +15,16 @@ const Survey = ({ surveyData }) => {
   return (
     <div>
       <h2>{surveyData.name}</h2>
-      {surveyData.ratingQuestions.map(question => (
-        <RatingQuestion
-          key={question.id}
-          deleteQuestion={deleteQuestion}
-          question={question}
-          ratingQuestionsUrl={removeJsonFromUrl()}
-        />
-      ))}
+      <div className={styles.list}>
+        {surveyData.ratingQuestions.map(question => (
+          <RatingQuestion
+            key={question.id}
+            deleteQuestion={deleteQuestion}
+            question={question}
+            ratingQuestionsUrl={removeJsonFromUrl()}
+          />
+        ))}
+      </div>
     </div>
   );
 };

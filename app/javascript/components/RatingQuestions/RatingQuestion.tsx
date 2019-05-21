@@ -122,10 +122,12 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
             </div>
             <h1
               className={styles.selectionIndicator}
-              style={{ color: this.optionColors[this.state.selectedOption] }}
+              style={{
+                background: this.optionColors[this.state.selectedOption]
+              }}
             >
-              {" "}
-              {this.state.selectedOption}{" "}
+              {/* {" "}
+              {this.state.selectedOption}{" "} */}
             </h1>
           </div>
         </div>
