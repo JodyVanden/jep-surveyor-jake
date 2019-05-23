@@ -2,6 +2,7 @@ import * as React from "react";
 import * as styles from "./RatingQuestion.module.scss";
 import axios from "axios";
 import RatingQuestionOption from "./RatingQuestionOption";
+import { Button } from "@cultureamp/kaizen-component-library";
 
 interface RatingQuestionProps {
   question: { title: string; id: string };
@@ -89,31 +90,34 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
   render() {
     return (
       <div className={styles.questionContainer}>
-        <div className={styles.questionColumn}>
-          <a
-            href={
-              this.props.ratingQuestionsUrl
-                ? `${this.props.ratingQuestionsUrl}/${this.questionData.id}`
-                : null
-            }
-            className={styles.questionTitle}
-          >
-            "{this.avulseString(this.state.questionTitle, 70)}"
-          </a>
-          <div className={styles.changeTitleContainer}>
-            <input
-              className={styles.changeTitleInput}
-              type="text"
-              value={this.state.updatedQuestionNameInput}
-              placeholder="new title"
-              onChange={this.updateQuestionNameInput}
-            />
-            <button
-              className={styles.updateButton}
-              onClick={this.updateQuestionName}
+        <div className={styles.questionContainer}>
+          <div className={styles.questionColumn}>
+            <a
+              href={
+                this.props.ratingQuestionsUrl
+                  ? `${this.props.ratingQuestionsUrl}/${this.questionData.id}`
+                  : null
+              }
+              className={styles.questionTitle}
             >
-              Update
-            </button>
+              "{this.avulseString(this.state.questionTitle, 70)}"
+            </a>
+            <div className={styles.changeTitleContainer}>
+              <input
+                className={styles.changeTitleInput}
+                type="text"
+                value={this.state.updatedQuestionNameInput}
+                placeholder="new title"
+                onChange={this.updateQuestionNameInput}
+              />
+              <Button label="update" onClick={this.updateQuestionName} />
+            </div>
+
+            <Button
+              label="delete"
+              onClick={this.props.deleteQuestion}
+              data-question-id={this.questionData.id}
+            />
           </div>
           <button
             className={styles.deleteButton}
