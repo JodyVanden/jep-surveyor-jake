@@ -89,52 +89,50 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
   render() {
     return (
       <div className={styles.questionContainer}>
-        <div className={styles.questionContainer}>
-          <div className={styles.questionColumn}>
-            <a
-              href={
-                this.props.ratingQuestionsUrl
-                  ? `${this.props.ratingQuestionsUrl}/${this.questionData.id}`
-                  : null
-              }
-              className={styles.questionTitle}
-            >
-              "{this.avulseString(this.state.questionTitle, 70)}"
-            </a>
-            <div className={styles.changeTitleContainer}>
-              <input
-                className={styles.changeTitleInput}
-                type="text"
-                value={this.state.updatedQuestionNameInput}
-                placeholder="new title"
-                onChange={this.updateQuestionNameInput}
-              />
-              <button
-                className={styles.updateButton}
-                onClick={this.updateQuestionName}
-              >
-                Update
-              </button>
-            </div>
+        <div className={styles.questionColumn}>
+          <a
+            href={
+              this.props.ratingQuestionsUrl
+                ? `${this.props.ratingQuestionsUrl}/${this.questionData.id}`
+                : null
+            }
+            className={styles.questionTitle}
+          >
+            "{this.avulseString(this.state.questionTitle, 70)}"
+          </a>
+          <div className={styles.changeTitleContainer}>
+            <input
+              className={styles.changeTitleInput}
+              type="text"
+              value={this.state.updatedQuestionNameInput}
+              placeholder="new title"
+              onChange={this.updateQuestionNameInput}
+            />
             <button
-              className={styles.deleteButton}
-              data-question-id={this.questionData.id}
-              onClick={this.props.deleteQuestion}
+              className={styles.updateButton}
+              onClick={this.updateQuestionName}
             >
-              Delete Question
+              Update
             </button>
           </div>
-          <div className={styles.answersColumn}>
-            <div className={styles.optionsContainer}>
-              {this.renderQuestionOptions()}
-            </div>
-            <h1
-              className={styles.selectionIndicator}
-              style={{
-                background: this.optionColors[this.state.selectedOption]
-              }}
-            />
+          <button
+            className={styles.deleteButton}
+            data-question-id={this.questionData.id}
+            onClick={this.props.deleteQuestion}
+          >
+            Delete Question
+          </button>
+        </div>
+        <div className={styles.answersColumn}>
+          <div className={styles.optionsContainer}>
+            {this.renderQuestionOptions()}
           </div>
+          <h1
+            className={styles.selectionIndicator}
+            style={{
+              background: this.optionColors[this.state.selectedOption]
+            }}
+          />
         </div>
       </div>
     );
