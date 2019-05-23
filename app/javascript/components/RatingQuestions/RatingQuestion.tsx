@@ -2,6 +2,7 @@ import * as React from "react";
 import * as styles from "./RatingQuestion.module.scss";
 import axios from "axios";
 import RatingQuestionOption from "./RatingQuestionOption";
+import { Button } from "@cultureamp/kaizen-component-library";
 
 interface RatingQuestionProps {
   question: { title: string; id: string };
@@ -109,20 +110,14 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
                 placeholder="new title"
                 onChange={this.updateQuestionNameInput}
               />
-              <button
-                className={styles.updateButton}
-                onClick={this.updateQuestionName}
-              >
-                Update
-              </button>
+              <Button label="update" onClick={this.updateQuestionName} />
             </div>
-            <button
-              className={styles.deleteButton}
-              data-question-id={this.questionData.id}
+
+            <Button
+              label="delete"
               onClick={this.props.deleteQuestion}
-            >
-              Delete Question
-            </button>
+              data-question-id={this.questionData.id}
+            />
           </div>
           <div className={styles.answersColumn}>
             <div className={styles.optionsContainer}>
