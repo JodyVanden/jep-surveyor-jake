@@ -31,8 +31,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-// or you can use `import gql from 'graphql-tag';` instead
-
 const accountQuery = gql`
   {
     account {

@@ -119,24 +119,17 @@ class RatingQuestion extends React.Component<RatingQuestionProps> {
               data-question-id={this.questionData.id}
             />
           </div>
-          <button
-            className={styles.deleteButton}
-            data-question-id={this.questionData.id}
-            onClick={this.props.deleteQuestion}
-          >
-            Delete Question
-          </button>
-        </div>
-        <div className={styles.answersColumn}>
-          <div className={styles.optionsContainer}>
-            {this.renderQuestionOptions()}
+          <div className={styles.answersColumn}>
+            <div className={styles.optionsContainer}>
+              {this.renderQuestionOptions()}
+            </div>
+            <h1
+              className={styles.selectionIndicator}
+              style={{
+                background: this.optionColors[this.state.selectedOption]
+              }}
+            />
           </div>
-          <h1
-            className={styles.selectionIndicator}
-            style={{
-              background: this.optionColors[this.state.selectedOption]
-            }}
-          />
         </div>
       </div>
     );
