@@ -1,8 +1,8 @@
 import * as React from "react";
 import axios from "axios";
 import * as styles from "./index.module.scss";
-import RatingQuestion from "./RatingQuestion";
-import NewQuestionForm from "./NewQuestionForm";
+import RatingQuestion from "./ratingQuestion/RatingQuestion";
+import NewQuestionForm from "./newQuestionForm/NewQuestionForm";
 
 import ApolloClient from "apollo-boost";
 

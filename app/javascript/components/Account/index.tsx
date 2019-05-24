@@ -4,7 +4,7 @@ import { ApolloProvider } from "react-apollo";
 import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
 import { Query } from "react-apollo";
-import { gql } from "apollo-boost";
+import accountQuery from "./gqlOperations/accountQuery";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
 import SignIn from "./SignIn";
@@ -31,28 +31,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-const accountQuery = gql`
-  {
-    account {
-      id
-      name
-      users {
-        id
-        name
-        email
-      }
-      surveys {
-        id
-        name
-        ratingQuestions {
-          id
-          title
-        }
-      }
-    }
-  }
-`;
-
 class Account extends React.Component {
   triggerRefresh = () => {
     window.location.reload();
@@ -78,7 +56,7 @@ class Account extends React.Component {
                 <p>You are logged in</p>
                 <h1>{data.account.name}</h1>
                 {data.account.surveys.map(survey => (
-                  <Survey surveyData={survey} />
+                  <Survey surveyData={survey} key={survey.id} />
                 ))}
               </div>
             );
