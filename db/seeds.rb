@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+ca = Account.create!({ name: "CultureAmp"})
+coles = Account.create!({ name: "Coles"})
+
+ca_user = User.create!({ name: "C.A.User", email: "user@cultureamp.com", password: "123456", account: ca})
+coles_user = User.create!({ name: "Coles.User", email: "user@coles.com", password: "123456", account: coles})
+
+ca_survey_1 = Survey.create!({ name: "CA Survey 1", account: ca})
+ca_survey_2 = Survey.create!({ name: "CA Survey 2", account: ca})
+coles_survey_1 = Survey.create!({ name: "Coles Survey 1", account: coles})
+coles_survey_2 = Survey.create!({ name: "Coles Survey 2", account: coles})
+
+RatingQuestion.create!([
+  { title: "CA_Survey_1_Question_1", survey: ca_survey_1},
+  { title: "CA_Survey_1_Question_2", survey: ca_survey_1},
+  { title: "CA_Survey_1_Question_3", survey: ca_survey_1},
+  { title: "CA_Survey_1_Question_4", survey: ca_survey_1},
+  { title: "CA_Survey_1_Question_5", survey: ca_survey_1},
+  { title: "CA_Survey_2_Question_1", survey: ca_survey_2},
+  { title: "CA_Survey_2_Question_2", survey: ca_survey_2},
+  { title: "CA_Survey_2_Question_3", survey: ca_survey_2},
+  { title: "CA_Survey_2_Question_4", survey: ca_survey_2},
+  { title: "CA_Survey_2_Question_5", survey: ca_survey_2},
+  { title: "Coles_Survey_1_Question_1", survey: coles_survey_1},
+  { title: "Coles_Survey_1_Question_2", survey: coles_survey_1},
+  { title: "Coles_Survey_1_Question_3", survey: coles_survey_1},
+  { title: "Coles_Survey_1_Question_4", survey: coles_survey_1},
+  { title: "Coles_Survey_1_Question_5", survey: coles_survey_1},
+  { title: "Coles_Survey_2_Question_1", survey: coles_survey_2},
+  { title: "Coles_Survey_2_Question_2", survey: coles_survey_2},
+  { title: "Coles_Survey_2_Question_3", survey: coles_survey_2},
+  { title: "Coles_Survey_2_Question_4", survey: coles_survey_2},
+  { title: "Coles_Survey_2_Question_5", survey: coles_survey_2}
+])
+
