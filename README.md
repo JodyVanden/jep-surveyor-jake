@@ -1,6 +1,6 @@
-###Start rails with secret (for jwt encoding/decoding)
+### Start rails with secret (for jwt encoding/decoding)
 SECRET="something" foreman start web
-###Start webpacker
+### Start webpacker
 foreman start webpacker
-###Get css types
+### Get css types
 foreman start css-types
